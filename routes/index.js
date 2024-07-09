@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 
-let todos=[]
+let todos=[{id:1,title:"learn javascript",completed:false }]
 let idCounter=1
 
 router.get('/', function(req, res, next) {
