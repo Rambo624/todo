@@ -3,8 +3,9 @@ var router = express.Router();
 
 /* GET home page. */
 
-let todos=[{title:"Learn Javascript"}]
+
 let idCounter=1
+let todos=[{id:idCounter, title:"Learn Javascript", completed: false}]
 
 router.get('/', function(req, res, next) {
   res.redirect("/todos")
@@ -16,7 +17,7 @@ router.get('/todos', (req, res) => {
 
 router.post('/todos', (req, res) => {
   const todo = {
-      id: idCounter++, // Use idCounter and increment it
+      id: ++idCounter, // Use idCounter and increment it
       title: req.body.title,
       completed: req.body.completed || false
   };
